@@ -1,0 +1,29 @@
+{
+    "name": "fanttom/app",
+    "authors": [
+        {
+            "name": "fantTom",
+            "email": "fant-tom@mail.ru"
+        }
+    ],
+    "require": {
+        "symfony/routing": "^4.4",
+        "symfony/config": "^4.4",
+        "symfony/templating": "^4.4",
+        "symfony/yaml": "^4.4",
+        "symfony/http-foundation": "^4.4",
+        "symfony/http-kernel": "^4.4"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/helpers/helpers.php"
+        ]
+    }
+
+}

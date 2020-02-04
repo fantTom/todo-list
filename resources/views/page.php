@@ -1,0 +1,4 @@
+
+Page
+<?php
+echo $alias;

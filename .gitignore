@@ -1,0 +1,6 @@
+# IntellijIdea files
+*.iml
+.idea
+composer.lock
+/logs/
+/vendor/

@@ -12,7 +12,8 @@
         "symfony/templating": "^4.4",
         "symfony/yaml": "^4.4",
         "symfony/http-foundation": "^4.4",
-        "symfony/http-kernel": "^4.4"
+        "symfony/http-kernel": "^4.4",
+        "doctrine/orm": "^2.7"
     },
     "require-dev": {
         "symfony/var-dumper": "^4.4"

@@ -1,14 +1,14 @@
 <?php
 
-namespace App\View;
+namespace App\Core\View;
 
-use App\Core\Interfaces\ViewInteface;
+use App\Core\Interfaces\ViewInterface;
 use Symfony\Component\Templating\PhpEngine;
 use Symfony\Component\Templating\TemplateNameParser;
 use Symfony\Component\Templating\Loader\FilesystemLoader;
 
 
-class View implements ViewInteface
+class View implements ViewInterface
 {
     private $templating;
 

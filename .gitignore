@@ -2,5 +2,6 @@
 *.iml
 .idea
 composer.lock
+autoload.php
 /logs/
 /vendor/

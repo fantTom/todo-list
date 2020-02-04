@@ -28,13 +28,10 @@ class App
     private $controller;
     private $arguments;
     private $basePath;
-
     private $container = [];
-
     public static $instance = null;
 
-
-    public static function getInstance($basePath=null)
+    public static function getInstance($basePath = null)
     {
         if (is_null(static::$instance)) {
             static::$instance = new static($basePath);
@@ -42,7 +39,6 @@ class App
 
         return static::$instance;
     }
-
 
     private function __construct($basePath)
     {
@@ -92,35 +88,43 @@ class App
     {
         return (new ControllerResolver())->getController($this->request);
     }
-    public function getArguments($controller){
-        return (new Controller\ArgumentResolver())->getArguments($this->request,$controller);
+
+    public function getArguments($controller)
+    {
+        return (new Controller\ArgumentResolver())->getArguments($this->request, $controller);
     }
 
 
     public function run()
     {
+
         $matcher = new Routing\Matcher\UrlMatcher($this->routes, $this->requestContext);
 
         try {
             $this->request->attributes->add($matcher->match($this->request->getPathInfo()));
 
             $this->controller = $this->getController();
-            $this->arguments =  $this->getArguments($this->controller);
-            $responce = call_user_func_array($this->controller, $this->arguments);
+            $this->arguments = $this->getArguments($this->controller);
 
+            $responce = call_user_func_array($this->controller, $this->arguments);
         } catch (\Exception $e) {
             exit('error');
         }
+
         $responce->send();
     }
 
-    public function  add($key, $object){
+
+    public function add($key, $object)
+    {
         $this->container[$key] = $object;
         return $object;
+
     }
 
-    public function get($key) {
-        if (isset($this->container[$key])){
+    public function get($key)
+    {
+        if (isset($this->container[$key])) {
             return $this->container[$key];
         }
         return null;

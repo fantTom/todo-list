@@ -1,8 +1,8 @@
 <?php
-namespace App\Http;
+namespace App\Core\Http;
 
 use App\Core\Interfaces\ControllerInterface;
-use App\View\View;
+use App\Core\View\View;
 use Symfony\Component\HttpFoundation\Response;
 
 

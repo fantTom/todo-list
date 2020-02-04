@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Config;
+namespace App\Core\Config;
 
 use App\Core\Interfaces\ConfigInterface;
 use Symfony\Component\Config\FileLocator;
@@ -23,7 +23,7 @@ class Config implements ConfigInterface
 
     public function addConfig($file)
     {
-        $configVal = $this->loader->load($this->locator->Locate($file));
+        $configVal = $this->loader->load($this->locator->locate($file));
         if ($configVal) {
             foreach ($configVal as $key => $arr) {
                 $this->config[$key] = $arr;
@@ -32,18 +32,18 @@ class Config implements ConfigInterface
 
     }
 
-    public function get($keyValue)
-    {
+    public function get($keyValue) {
         list($key, $value) = explode('.', $keyValue);
 
-        if ($key && isset($this->config[$key])) {
-            if ($value && $this->config[$key][$value]) {
+        if($key && isset($this->config[$key])) {
+            if($value && $this->config[$key][$value]) {
                 return $this->config[$key][$value];
-
             }
-        } else {
-            return $this->config[$key];
+            else {
+                return $this->config[$key];
+            }
         }
+
         return null;
     }
 

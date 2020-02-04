@@ -2,7 +2,7 @@
 
 namespace App\Core\Interfaces;
 
-interface ViewInteface
+interface ViewInterface
 {
     public function make($path, $data = []);
 }

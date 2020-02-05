@@ -10,13 +10,13 @@ abstract class Controller implements ControllerInterface
 {
 
     protected $view;
-    protected $entityManager;
+    protected $em;
 
 
 
     public function __construct()
     {
-        $this->entityManager = app()->get('orm')->getEntityManager();
+        $this->em = app()->get('orm')->getEntityManager();
         $this->view = new View();
     }
 

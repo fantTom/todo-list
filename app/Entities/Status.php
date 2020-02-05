@@ -2,66 +2,85 @@
 
 namespace App\Entities;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM;
+
 /**
- * @ORM\Entity()
- * @ORM\Table(name="statuses")
+ * @Entity
+ * @Table(name="statuses")
  */
 class Status
 {
-
     /**
      * @Id
-     * @Column(type="integer" name="id")
+     * @Column(type="integer")
      * @GeneratedValue
      */
     private $id;
 
+    /**
+     * @Column(name="title_status", nullable=true)
+     */
+    private $title;
 
+    /**
+     * @Column(type="boolean", nullable=true)
+     */
+    private $activity;
+
+    /**
+     * @ORM\Column(type="datetime", options={"default"="CURRENT_TIMESTAMP"})
+     */
+    private $date_created;
+
+
+    /**
+     * @return mixed
+     */
     public function getId()
     {
         return $this->id;
     }
 
-
     /**
-     * @Column(type="string", name="title_status" length=255)
+     * @return mixed
      */
-    public $title;
-
-    public function getTitle()
+    public function getDateCreated()
     {
-        return $this->title;
-    }
-
-    public function setTitle($title)
-    {
-        $this->title = $title;
+        return $this->date_created;
     }
 
     /**
-     * @Column(type="boolean" options={"default": true})
+     * @return mixed
      */
-    public $activity;
-
-    public function getStatus()
+    public function getActivity()
     {
         return $this->activity;
     }
 
-    public function setStatus($activity)
+    /**
+     * @param mixed $activity
+     */
+    public function setActivity($activity)
     {
         $this->activity = $activity;
     }
 
     /**
-     * @Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
+     * @return mixed
      */
-    private $date_created;
-
-
-    public function getDateCreated()
+    public function getTitle()
     {
-        return $this->date_created;
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
     }
 
 

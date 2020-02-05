@@ -105,7 +105,6 @@ class App
 
             $this->controller = $this->getController();
             $this->arguments = $this->getArguments($this->controller);
-
             $responce = call_user_func_array($this->controller, $this->arguments);
         } catch (\Exception $e) {
             exit('error');

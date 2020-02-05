@@ -2,6 +2,10 @@ index_route:
   path: /
   defaults: { _controller: 'App\Controllers\IndexController::indexAction' }
 
+admin_route:
+  path: /
+  defaults: { _controller: 'App\Controllers\AdminController::indexAction' }
+
 page_route:
   path: /page/{alias}
   defaults: { _controller: 'App\Controllers\PageController::showAction' }

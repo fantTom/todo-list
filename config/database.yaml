@@ -1,6 +1,6 @@
 database:
     dbname: "spurit.test"
     user: "root"
-    password: "****"
+    password: ""
     host: "localhost"
     driver: "pdo_mysql"

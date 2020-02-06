@@ -2,7 +2,6 @@
 
 namespace App\Entities;
 
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @Entity
@@ -32,6 +31,10 @@ class User
      */
     public $nickName;
 
+    /**
+     * @Column(type="datetime", options={"default"="CURRENT_TIMESTAMP"})
+     */
+    public $date_created;
 
 }
 

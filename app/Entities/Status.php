@@ -2,10 +2,6 @@
 
 namespace App\Entities;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM;
-
 /**
  * @Entity
  * @Table(name="statuses")
@@ -30,7 +26,7 @@ class Status
     private $activity;
 
     /**
-     * @ORM\Column(type="datetime", options={"default"="CURRENT_TIMESTAMP"})
+     * @Column(type="datetime", options={"default"="CURRENT_TIMESTAMP"})
      */
     private $date_created;
 

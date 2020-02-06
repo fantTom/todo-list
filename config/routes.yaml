@@ -3,8 +3,26 @@ index_route:
   defaults: { _controller: 'App\Controllers\IndexController::indexAction' }
 
 admin_route:
-  path: /
+  path: /admin
   defaults: { _controller: 'App\Controllers\AdminController::indexAction' }
+
+task_created:
+  path: /task/created
+  defaults: { _controller: 'App\Controllers\TaskController::createdAction' }
+
+task_update:
+  path: /task/update/{id}
+  defaults: { _controller: 'App\Controllers\TaskController::updateAction' }
+
+
+task_save:
+  path: /task/save
+  defaults: { _controller: 'App\Controllers\TaskController::saveAction' }
+
+api_route:
+  path: /api
+  defaults: { _controller: 'App\Controllers\ApiController::getAction' }
+  methods:  GET
 
 page_route:
   path: /page/{alias}

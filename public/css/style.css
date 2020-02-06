@@ -1,0 +1,32 @@
+
+
+.name-column {
+    margin-top: 50px;
+    display: block;
+    color: dodgerblue;
+    background-color: cornsilk;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.task {
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+.task .description,
+.task .title {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+form.created {
+    width: 100%;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto 0;
+}

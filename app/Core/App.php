@@ -97,7 +97,6 @@ class App
 
     public function run()
     {
-
         $matcher = new Routing\Matcher\UrlMatcher($this->routes, $this->requestContext);
 
         try {
@@ -109,7 +108,6 @@ class App
         } catch (\Exception $e) {
             exit('error');
         }
-
         $responce->send();
     }
 

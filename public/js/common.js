@@ -1,4 +1,4 @@
-$('#status-form').on('submit', function (e) {
+$('#created-task').on('submit', function (e) {
     e.preventDefault();
     var data = "title=" + $('#title').val() + "&discription=" + $('#discription').val() + '&status=' + $('#status').val();
     $.ajax({
@@ -10,6 +10,20 @@ $('#status-form').on('submit', function (e) {
         }
     });
 });
+
+$('#update-task').on('submit', function (e) {
+    e.preventDefault();
+    var data = "title=" + $('#title').val() + "&discription=" + $('#discription').val() + '&status=' + $('#status').val();
+    $.ajax({
+        url: '/task/save/'+ $(this).data('id'),
+        type: 'GET',
+        data: data,
+        success: function (result) {
+            document.location.href = "/admin";
+        }
+    });
+});
+
 
 $('.cancel').on('click', function (e) {
     e.preventDefault();

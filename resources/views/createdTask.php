@@ -2,7 +2,7 @@
 
 <main class="container">
     <div class="row">
-        <form class="created" id="status-form">
+        <form class="created" id="created-task">
             <div class="form-group">
                 <label for="title">Заголовок задачи</label>
                 <input type="text" class="form-control" id="title" required>

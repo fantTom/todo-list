@@ -14,6 +14,7 @@ class TaskController extends Controller
     public function createdAction() {
         return $this->render('createdTask', ['title' => "Панель администратора", 'status_list' => $this->getStatusList()]);
     }
+
     public function saveAction()
     {
         $request = Request::createFromGlobals();
@@ -31,9 +32,21 @@ class TaskController extends Controller
     {
         $task = $this->em->find('App\Entities\Task', $id);
         $commentRepository = $this->em->getRepository(Comment::class);
-        $comment = $commentRepository->findBy(['task' => $id], ['date_created' => 'ASC']);
+        $comment = $commentRepository->findBy(['task' => $id], ['date_created' => 'DESC']);
 
-        return $this->render('updateTask', ['title' => "Редактироавние", 'task' => $task, 'comment' => $comment, 'status_list' => $this->getStatusList()]);
+        return $this->render('updateTask', ['title' => "Редактироавние", 'task' => $task, 'idTask' => $id, 'comment' => $comment, 'status_list' => $this->getStatusList()]);
+    }
+    public function saveIdAction($id) {
+        $request = Request::createFromGlobals();
+        $task = $this->em->getRepository(Task::class)->find($id);
+        if (!$task) { return false;}
+
+        $task->setTitle($request->query->get('title'));
+        $task->setDescription($request->query->get('discription'));
+        $task->setStatus(  $request->query->get('status'));
+        $task->setAutor( 1);
+        $this->em->flush();
+        return true;
     }
 
     public function getStatusList () {

@@ -16,7 +16,7 @@ class Status
     private $id;
 
     /**
-     * @Column(name="title_status", nullable=true)
+     * @Column(name="title_status")
      */
     private $title;
 
@@ -26,10 +26,9 @@ class Status
     private $activity;
 
     /**
-     * @Column(type="datetime", options={"default"="CURRENT_TIMESTAMP"})
+     * @Column(type="datetime", nullable=true)
      */
-    private $date_created;
-
+    public $date_created;
 
     /**
      * @return mixed
@@ -39,13 +38,6 @@ class Status
         return $this->id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDateCreated()
-    {
-        return $this->date_created;
-    }
 
     /**
      * @return mixed
@@ -78,6 +70,7 @@ class Status
     {
         $this->title = $title;
     }
+
 
 
 }

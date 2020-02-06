@@ -42,17 +42,9 @@ class Task
     private $autor;
 
     /**
-     * @Column(type="datetime", options={"default"="CURRENT_TIMESTAMP"})
+     * @Column(type="datetime")
      */
     private $date_created;
-
-    /**
-     * @return mixed
-     */
-    public function getDateCreated()
-    {
-        return $this->date_created;
-    }
 
     /**
      * @return mixed

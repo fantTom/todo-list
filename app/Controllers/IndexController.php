@@ -23,36 +23,36 @@ class IndexController extends Controller
 //        $user->name = "do";
 //        $user->lastName = "to";
 //        $user->nickName = "go";
-//        dd($user);
+////        dd($user);
 //        $this->em->persist($user);
 
 //        $status = new Status();
 //        $status->setTitle("do");
 //        $status->setActivity(true);
 //        $this->em->persist($status);
-//        dd($status);
+////        dd($status);
 
 //        $statuses = $this->em->find('App\Entities\Status', 1);
 //        dd($statuses->getId());
 
 
-        $task = new Task();
-        $task->setTitle("Добавить новое");
-        $task->setDescription("Текст описания задачи");
-        $task->setStatus( 1);
-        $task->setAutor( 1);
+//        $task = new Task();
+//        $task->setTitle("Добавить новое");
+//        $task->setDescription("Текст описания задачи");
+//        $task->setStatus( 2);
+//        $task->setAutor( 1);
 //        $this->em->persist($task);
 ////                dd($task);
 //        dd($this->em->find('App\Entities\Task', 3));
 
 
-        $comment = new Comment();
-        $comment->task = 1;
-        $comment->text = "Текст коментария к задаче";
-        $comment->autor = 1;
-        $this->em->persist($comment);
+//        $comment = new Comment();
+//        $comment->task = 3;
+//        $comment->text = "Текст коментария к задаче";
+//        $comment->autor = 1;
+//        $this->em->persist($comment);
 ////        dd($comment);
-        $this->em->flush();
+//        $this->em->flush();
 
         return $this->render('indexIndex', ['title' => "Главная страница"]);
     }

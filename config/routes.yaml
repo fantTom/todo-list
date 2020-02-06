@@ -18,6 +18,9 @@ task_update:
 task_save:
   path: /task/save
   defaults: { _controller: 'App\Controllers\TaskController::saveAction' }
+task_save_id:
+  path: /task/save/{id}
+  defaults: { _controller: 'App\Controllers\TaskController::saveIdAction' }
 
 api_route:
   path: /api

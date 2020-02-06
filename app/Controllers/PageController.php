@@ -6,7 +6,9 @@ use App\Core\Http\Controller;
 
 class PageController extends Controller
 {
-    public function showAction($alias) {
-        return $this->render("page",['alias'=>$alias]);
+    public function showAction($alias)
+    {
+
+        return $this->render("page", ['alias' => $alias]);
     }
 }

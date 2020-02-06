@@ -3,6 +3,7 @@
 namespace App\Entities;
 
 use Doctrine\ORM\Mapping as ORM;
+
 /**
  * @Entity
  * @Table(name="tasks")
@@ -28,23 +29,24 @@ class Task
     private $description;
 
     /**
-     *  @Column(type="integer", nullable=true, name="status_id")
-     *  @ManyToOne(targetEntity="App\Entity\Status")
-     *  @JoinColumn(name="status_id", referencedColumnName="id")
+     * @Column(type="integer", nullable=true, name="status_id")
+     * @ManyToOne(targetEntity="App\Entity\Status")
+     * @JoinColumn(name="status_id", referencedColumnName="id")
      */
     private $status;
 
     /**
-     *  @Column(type="integer", nullable=true, name="autor_id")
-     *  @ManyToOne(targetEntity="App\Entity\User")
-     *  @JoinColumn(name="autor_id", referencedColumnName="id")
+     * @Column(type="integer", nullable=true, name="autor_id")
+     * @ManyToOne(targetEntity="App\Entity\User")
+     * @JoinColumn(name="autor_id", referencedColumnName="id")
      */
     private $autor;
 
     /**
      * @Column(type="datetime")
      */
-    private $date_created;
+    public $date_created;
+
 
     /**
      * @return mixed
@@ -118,12 +120,21 @@ class Task
         return $this->id;
     }
 
-    public function toApi(){
-       return [
-            'title'=>$this->title,
-            'description'=>$this->description
+    public function toApi()
+    {
+        return [
+            'title' => $this->title,
+            'description' => $this->description
         ];
 
+    }
+
+    /**
+     * @param mixed $date_created
+     */
+    public function setDateCreated($date_created): void
+    {
+        $this->date_created = $date_created;
     }
 
 

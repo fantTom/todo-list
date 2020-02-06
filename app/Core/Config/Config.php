@@ -32,14 +32,14 @@ class Config implements ConfigInterface
 
     }
 
-    public function get($keyValue) {
+    public function get($keyValue)
+    {
         list($key, $value) = explode('.', $keyValue);
 
-        if($key && isset($this->config[$key])) {
-            if($value && $this->config[$key][$value]) {
+        if ($key && isset($this->config[$key])) {
+            if ($value && $this->config[$key][$value]) {
                 return $this->config[$key][$value];
-            }
-            else {
+            } else {
                 return $this->config[$key];
             }
         }

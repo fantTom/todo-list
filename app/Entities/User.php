@@ -34,6 +34,7 @@ class User
      * @Column(type="datetime", nullable=true)
      */
     public $date_created;
+
     /**
      * @return mixed
      */

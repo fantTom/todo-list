@@ -1,5 +1,4 @@
 
-
 .name-column {
     margin-top: 50px;
     display: block;
@@ -9,11 +8,14 @@
     border-bottom: 1px solid black;
 }
 
+.comment,
 .task {
     border-bottom: 1px solid black;
     cursor: pointer;
 }
 
+.comment .text,
+.comment .date,
 .task .description,
 .task .title {
     display: flex;
@@ -23,10 +25,16 @@
     align-items: center;
 }
 
+.comments-list,
 form.created {
     width: 100%;
     max-width: 580px;
     display: flex;
     flex-direction: column;
     margin: 50px auto 0;
+}
+
+.comment {
+    margin: 2px auto;
+    border: 1px solid black;
 }

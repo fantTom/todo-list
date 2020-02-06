@@ -1,4 +1,3 @@
-
 Page
 <?php
 echo $alias;

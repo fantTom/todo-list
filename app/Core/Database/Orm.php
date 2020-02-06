@@ -12,20 +12,23 @@ class Orm
     private $params;
     private $entityManager;
 
-    public function __construct($params) {
+    public function __construct($params)
+    {
         $this->params = $params;
 
-        $config =  Setup::createAnnotationMetadataConfiguration(array("app/Entities"), true);
-        $entityManager = EntityManager::create($this->params,$config);
+        $config = Setup::createAnnotationMetadataConfiguration(array("app/Entities"), true);
+        $entityManager = EntityManager::create($this->params, $config);
 
         $this->setEntityManager($entityManager);
     }
 
-    public function setEntityManager($entityManager) {
+    public function setEntityManager($entityManager)
+    {
         $this->entityManager = $entityManager;
     }
 
-    public function getEntityManager() {
+    public function getEntityManager()
+    {
         return $this->entityManager;
     }
 }

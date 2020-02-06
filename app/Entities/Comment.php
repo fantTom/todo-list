@@ -29,9 +29,9 @@ class Comment
     private $text;
 
     /**
-     *  @Column(type="integer", nullable=true, name="autor_id")
-     *  @ManyToOne(targetEntity="App\Entity\User")
-     *  @JoinColumn(name="autor_id", referencedColumnName="id")
+     * @Column(type="integer", nullable=true, name="autor_id")
+     * @ManyToOne(targetEntity="App\Entity\User")
+     * @JoinColumn(name="autor_id", referencedColumnName="id")
      */
     private $autor;
 
@@ -39,10 +39,6 @@ class Comment
      * @Column(type="datetime", nullable=true)
      */
     public $date_created;
-
-
-
-
 
 
     /**
@@ -99,6 +95,14 @@ class Comment
     public function setAutor($autor): void
     {
         $this->autor = $autor;
+    }
+
+    /**
+     * @param mixed $date_created
+     */
+    public function setDateCreated($date_created): void
+    {
+        $this->date_created = $date_created;
     }
 
 

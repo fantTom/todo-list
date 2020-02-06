@@ -9,14 +9,11 @@
                         <?= $key; ?>
                     </span>
                     <div class="tasks">
-                        <?php foreach ($task as $key => $value) {   ?>
-                            <a class="task" data-id="<?= $key?>">
+                        <?php foreach ($task as $key => $value) { ?>
+                            <a class="task" data-id="<?= $key ?>">
                                 <span class="title">
                                     <?= $value['title'] ?>
                                 </span>
-<!--                                <span class="description">-->
-<!--                                    --><?//= $value['description']; ?>
-<!--                                </span>-->
                             </a>
                         <?php } ?>
                     </div>

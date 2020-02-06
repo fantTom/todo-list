@@ -14,13 +14,30 @@ task_update:
   path: /task/update/{id}
   defaults: { _controller: 'App\Controllers\TaskController::updateAction' }
 
-
 task_save:
   path: /task/save
   defaults: { _controller: 'App\Controllers\TaskController::saveAction' }
+
 task_save_id:
   path: /task/save/{id}
   defaults: { _controller: 'App\Controllers\TaskController::saveIdAction' }
+
+
+comment_created:
+  path: /comment/created/{task}
+  defaults: { _controller: 'App\Controllers\CommentController::createdAction' }
+
+comment_update:
+  path: /comment/update/{id}
+  defaults: { _controller: 'App\Controllers\CommentController::updateAction' }
+
+comment_save:
+  path: /comment/save
+  defaults: { _controller: 'App\Controllers\CommentController::saveAction' }
+
+comment_save_id:
+  path: /comment/save/{id}
+  defaults: { _controller: 'App\Controllers\CommentController::saveIdAction' }
 
 api_route:
   path: /api

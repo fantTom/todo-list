@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Core\Http;
 
 use App\Core\Interfaces\ControllerInterface;
@@ -11,7 +12,6 @@ abstract class Controller implements ControllerInterface
 
     protected $view;
     protected $em;
-
 
 
     public function __construct()

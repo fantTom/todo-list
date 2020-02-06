@@ -19,10 +19,10 @@ class ApiController extends Controller
         foreach ($statuses as $status) {
             $statusId = $status->getId();
             if ($status->getActivity()) {
-                $tasks = $taskRepository->findBy(['status' => $statusId], ['date_created' => 'ASC']);
+                $tasks = $taskRepository->findBy(['status' => $statusId], ['date_created' => 'DESC']);
                 $taskArr = [];
                 foreach ($tasks as $task) {
-                    $taskArr[ $task->getId()] = $task->toApi();
+                    $taskArr[$task->getId()] = $task->toApi();
                 }
                 $arrJson[$status->getTitle()] = $taskArr;
             }
